@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "nodemon index.js"
   },
@@ -10,7 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "cron": "^2.1.0",
     "dotenv": "^16.0.2",
+    "nodemailer": "^6.7.8",
     "nodemon": "^2.0.19",
     "puppeteer": "^17.0.0"
   }
