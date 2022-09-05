@@ -1,9 +1,9 @@
 import  puppeteer  from "puppeteer";
-import  $  from "cheerio";
+import  cheerio  from "cheerio";
 import  cronJob  from "cron";
 
 
-const url = 'https://twitter.com/';
+const url = 'https://www.klasshour.com/';
 
 async function configureBrowser() {
     const browser = await puppeteer.launch();
@@ -15,16 +15,14 @@ async function configureBrowser() {
 
 async function Login(page) {
     await page.reload();
-    let html = await page.evaluate(() => document.body.innerHTML);
-    // console.log(html);
-    let a = $('a',html).each((link)=>{
-        return link.toString()
-    })
-console.log(a)
+    page.type('input', 'Hello',{delay: 100})
+   await page.screenshot({path: 'example.png'});
+    
+
 }
 
 async function test(){
     let page = await configureBrowser();
     await Login(page)
 }
- test()
+test()
